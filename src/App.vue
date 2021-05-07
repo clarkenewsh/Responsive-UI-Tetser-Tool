@@ -31,8 +31,7 @@ background: #1a202c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #f8f8f8;
+  color: #e2e8f0;
   margin-top: 60px;
-  background: #1a202c;
 }
 </style>
