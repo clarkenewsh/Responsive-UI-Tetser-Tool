@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header>
+      <h1>Responsive UI Tetser Tool</h1>
+    </header>
+    <main>
+      <!-- displays multiple iframes (on the screen at the same time), which can allow the tester to view the inputted website at different resolutions. -->
+      <ViewPorts />
+    </main>
+    <footer></footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ViewPorts from './components/ViewPorts';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ViewPorts,
   }
 }
 </script>
 
 <style>
+body {
+background: #1a202c;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #f8f8f8;
   margin-top: 60px;
+  background: #1a202c;
 }
 </style>
