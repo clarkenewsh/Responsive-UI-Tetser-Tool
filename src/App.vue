@@ -4,6 +4,8 @@
       <h1>Responsive UI Tetser Tool</h1>
     </header>
     <main>
+      <h3>What to do</h3>
+      <p>To check the repsonsiveness of your website click the link below each viewport and wait for your site to show in the viewport </p>
       <!-- displays multiple iframes (on the screen at the same time), which can allow the tester to view the inputted website at different resolutions. -->
       <ViewPorts />
     </main>
@@ -34,4 +36,9 @@ background: #1a202c;
   color: #e2e8f0;
   margin-top: 60px;
 }
+
+h3, p {
+  color: #a9b6cc;
+}
+
 </style>
