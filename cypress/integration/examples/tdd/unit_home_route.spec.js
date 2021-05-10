@@ -21,9 +21,6 @@ describe('The Home Page', () => {
       cy.get('title')
         // eslint-disable-next-line padded-blocks
         .should('have.text', 'responsive-ui-tester-tool')
-  
-      // Save screenshot of test result to screenshots folder
-      cy.screenshot()
     })
   })
   

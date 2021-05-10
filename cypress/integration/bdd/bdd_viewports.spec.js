@@ -1,78 +1,26 @@
 /* eslint-disable no-undef */
-// Testing the home page route - BDD
 
-//   for instance access the home page user stories would be
-//    1. visit home page URL
-//    2. Query for the head tag and then the page title 
-//    3. Get each of the iframe tags 
-//    4. Set the viewport size for each iframe
-//    5. Check each viewport size and dimension should equla all the viewport resolution variotion 
-//    5.1 Viewport should equal - (375 x 667 (Mobile), 411 x 823 (Larger Mobile), 1024 x 768 (Tablet), 280 x 800 (Laptop Small), 1680 x 1050 (Desktop)
+// Feature: Viewport resolutions
+
+// User Story: As a user, I want to be able to check my website is responsive and scales in various viewport resoluton correctly
+// scenario: Contact business by email
+// Given I want check my website in various viewport resolutions
+// When I click the button to display the website in the viewport
+// Then the website is displayed in the viewport width and scales correctly
 
 
-// /// <reference types="cypress" />
+// // BDD Test Case Logic: Contact CTA Feature (email & phone) containing all the user stories scnarios (deatiled above)
 
-// context('Viewport', () => {
-//     beforeEach(() => {
-//       cy.visit('https://example.cypress.io/commands/viewport')
-//     })
-  
-//     it('cy.viewport() - set the viewport size and dimension', () => {
-//       // https://on.cypress.io/viewport
-  
-//       cy.get('#navbar').should('be.visible')
-//       cy.viewport(320, 480)
-  
-//       // the navbar should have collapse since our screen is smaller
-//       cy.get('#navbar').should('not.be.visible')
-//       cy.get('.navbar-toggle').should('be.visible').click()
-//       cy.get('.nav').find('a').should('be.visible')
-  
-//       // lets see what our app looks like on a super large screen
-//       cy.viewport(2999, 2999)
-  
-//       // cy.viewport() accepts a set of preset sizes
-//       // to easily set the screen to a device's width and height
-  
-//       // We added a cy.wait() between each viewport change so you can see
-//       // the change otherwise it is a little too fast to see :)
-  
-//       cy.viewport('macbook-15')
-//       cy.wait(200)
-//       cy.viewport('macbook-13')
-//       cy.wait(200)
-//       cy.viewport('macbook-11')
-//       cy.wait(200)
-//       cy.viewport('ipad-2')
-//       cy.wait(200)
-//       cy.viewport('ipad-mini')
-//       cy.wait(200)
-//       cy.viewport('iphone-6+')
-//       cy.wait(200)
-//       cy.viewport('iphone-6')
-//       cy.wait(200)
-//       cy.viewport('iphone-5')
-//       cy.wait(200)
-//       cy.viewport('iphone-4')
-//       cy.wait(200)
-//       cy.viewport('iphone-3')
-//       cy.wait(200)
-  
-//       // cy.viewport() accepts an orientation for all presets
-//       // the default orientation is 'portrait'
-//       cy.viewport('ipad-2', 'portrait')
-//       cy.wait(200)
-//       cy.viewport('iphone-4', 'landscape')
-//       cy.wait(200)
-  
-//       // The viewport will be reset back to the default dimensions
-//       // in between tests (the  default can be set in cypress.json)
-//     })
-//   })
+// 1. visit home page URL - http://localhost:3000/
+// 2. Grab the browser URL, ensure it includes /
+// 3. Get each of the iframe html tags with id '#mobile', '#large-mobile', 'tablet', '#laptop-small', '#desktop'
+// 4. Ensure the iframe is visible on the interface
+
+
   
 
-describe('Viewports', () => {
-    it('should check each iframe viewport iframe size and dismension', () => {
+describe('Viewport Resolutions', () => {
+    it('should check each iframe viewport iframe size and dimension', () => {
       // eslint-disable-next-line no-undef
       cy.visit('http://localhost:8080/')
   
@@ -84,8 +32,21 @@ describe('Viewports', () => {
       cy.get('title')
         // eslint-disable-next-line padded-blocks
         .should('have.text', 'responsive-ui-tester-tool')
-  
-      // Save screenshot of test result to screenshots folder
-      cy.screenshot()
+        
+      cy.get('iframe#mobile')
+      .should('be.visible')
+       
+      cy.get('iframe#large-mobile')
+      .should('be.visible')
+
+      cy.get('iframe#tablet')
+      .should('be.visible')
+
+      cy.get('iframe#laptop-small')
+      .should('be.visible')
+
+      cy.get('iframe#desktop')
+      .should('be.visible')
+
     })
   })
