@@ -11,7 +11,7 @@
 describe('The Home Page', () => {
     it('should visit the home page and check its url and head title tag', () => {
       // eslint-disable-next-line no-undef
-      cy.visit('http://localhost:3000/')
+      cy.visit('http://localhost:8080/')
   
       // Should be on a new URL which includes '/'
       // eslint-disable-next-line no-undef
@@ -20,16 +20,10 @@ describe('The Home Page', () => {
       // Page title should be Home Page
       cy.get('title')
         // eslint-disable-next-line padded-blocks
-        .should('have.text', 'Home Page')
+        .should('have.text', 'responsive-ui-tester-tool')
   
       // Save screenshot of test result to screenshots folder
       cy.screenshot()
     })
   })
-  
-  //  Cypress
-  // Visit a web page.
-  // Query for an element.
-  // Interact with that element.
-  // Assert about the content on the page.
   

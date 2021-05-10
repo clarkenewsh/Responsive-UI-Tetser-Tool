@@ -1,4 +1,14 @@
-// Examples from Cypress
+/* eslint-disable no-undef */
+// Testing the home page route - BDD
+
+//   for instance access the home page user stories would be
+//    1. visit home page URL
+//    2. Query for the head tag and then the page title 
+//    3. Get each of the iframe tags 
+//    4. Set the viewport size for each iframe
+//    5. Check each viewport size and dimension should equla all the viewport resolution variotion 
+//    5.1 Viewport should equal - (375 x 667 (Mobile), 411 x 823 (Larger Mobile), 1024 x 768 (Tablet), 280 x 800 (Laptop Small), 1680 x 1050 (Desktop)
+
 
 // /// <reference types="cypress" />
 
@@ -60,3 +70,22 @@
 //     })
 //   })
   
+
+describe('Viewports', () => {
+    it('should check each iframe viewport iframe size and dismension', () => {
+      // eslint-disable-next-line no-undef
+      cy.visit('http://localhost:8080/')
+  
+      // Should be on a new URL which includes '/'
+      // eslint-disable-next-line no-undef
+      cy.url().should('include', '/')
+  
+      // Page title should be Home Page
+      cy.get('title')
+        // eslint-disable-next-line padded-blocks
+        .should('have.text', 'responsive-ui-tester-tool')
+  
+      // Save screenshot of test result to screenshots folder
+      cy.screenshot()
+    })
+  })
